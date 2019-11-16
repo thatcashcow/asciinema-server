@@ -40,7 +40,7 @@ Alternatively, you can set `ASCIINEMA_API_URL` environment variable:
 For the use case when on ssh, use socat:
 socat TCP-LISTEN:8080,fork TCP:localhost:80
 After this you can forward your ssh connection:
-ssh -F ~/Dropbox/config/ssh/config -L 8080:127.0.0.1:80 -C -N -l mrwave90 gcloud-personal-4
+ssh -F ~/Dropbox/config/ssh/config -L 8080:127.0.0.1:8080 -C -N -l mrwave90 gcloud-personal-4
 
 ## Contributing
 
