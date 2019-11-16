@@ -30,7 +30,7 @@ API URL in `~/.config/asciinema/config` file as follows:
 
 ```ini
 [api]
-url = https://your.asciinema.host
+url = https://localhost
 ```
 
 Alternatively, you can set `ASCIINEMA_API_URL` environment variable:
