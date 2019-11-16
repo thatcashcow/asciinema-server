@@ -1,6 +1,6 @@
 # asciinema web app
 
-[![Build Status](https://travis-ci.org/asciinema/asciinema-server.svg?branch=develop)](https://travis-ci.org/asciinema/asciinema.org)
+[![Build Status](https://travis-ci.org/asciinema/asciinema-server.svg?branch=master)](https://travis-ci.org/asciinema/asciinema.org)
 [![Code Climate](https://codeclimate.com/github/asciinema/asciinema.org/badges/gpa.svg)](https://codeclimate.com/github/asciinema/asciinema.org)
 
 asciinema is a free and open source solution for recording terminal sessions
@@ -30,12 +30,17 @@ API URL in `~/.config/asciinema/config` file as follows:
 
 ```ini
 [api]
-url = https://your.asciinema.host
+url = https://localhost
 ```
 
 Alternatively, you can set `ASCIINEMA_API_URL` environment variable:
 
     ASCIINEMA_API_URL=https://your.asciinema.host asciinema rec
+
+For the use case when on ssh, use socat:
+socat TCP-LISTEN:8080,fork TCP:localhost:80
+After this you can forward your ssh connection:
+ssh -F ~/Dropbox/config/ssh/config -L 8080:127.0.0.1:8080 -C -N -l mrwave90 gcloud-personal-4
 
 ## Contributing
 
